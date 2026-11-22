@@ -1,0 +1,55 @@
+# Tic-tac-toe on the profile README.
+# A visitor clicks a square -> a new issue "ttt|move|<n>" opens -> this workflow plays the move,
+# lets the bot answer, redraws the board in README.md, comments on the issue and closes it.
+name: Tic-tac-toe
+
+on:
+  issues:
+    types: [opened]
+
+# one game move at a time, in order
+concurrency:
+  group: tictactoe
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  move:
+    if: startsWith(github.event.issue.title, 'ttt|')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Play the move
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          REPO: ${{ github.repository }}
+        run: node game/play.js
+
+      - name: Save the board
+        run: |
+          git config user.name "tic-tac-toe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md game/state.json
+          git diff --cached --quiet || git commit -m "Tic-tac-toe: move by @${ISSUE_USER}"
+          git pull --rebase
+          git push
+        env:
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+
+      - name: Reply and close the issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file game/comment.md
+          gh issue close "$NUMBER" --repo "$GITHUB_REPOSITORY"

@@ -4,15 +4,26 @@
     "",
     "",
     "",
+    "X",
     "",
-    "",
-    "",
+    "O",
     "",
     ""
   ],
   "status": "playing",
-  "moves": [],
-  "players": [],
+  "moves": [
+    {
+      "by": "dogra11",
+      "cell": 4
+    },
+    {
+      "by": "bot",
+      "cell": 6
+    }
+  ],
+  "players": [
+    "dogra11"
+  ],
   "stats": {
     "visitors": 0,
     "bot": 0,

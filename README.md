@@ -28,12 +28,12 @@
 
 <!-- TTT:START -->
 <p align="center">
-<img src="assets/ttt/o.svg" width="96" alt="O"><img src="assets/ttt/x.svg" width="96" alt="X"><a href="https://github.com/dogra11/dogra11/issues/new?title=ttt%7Cmove%7C2&body=Just%20click%20**Create**%20below%20-%20the%20bot%20will%20play%20its%20move%20in%20a%20few%20seconds%20and%20update%20the%20board.%20%F0%9F%8E%AE"><img src="assets/ttt/empty.svg" width="96" alt="play square 3"></a><br>
+<img src="assets/ttt/o.svg" width="96" alt="O"><img src="assets/ttt/x.svg" width="96" alt="X"><img src="assets/ttt/x.svg" width="96" alt="X"><br>
 <img src="assets/ttt/x.svg" width="96" alt="X"><img src="assets/ttt/x.svg" width="96" alt="X"><img src="assets/ttt/o.svg" width="96" alt="O"><br>
 <img src="assets/ttt/o.svg" width="96" alt="O"><img src="assets/ttt/o.svg" width="96" alt="O"><img src="assets/ttt/x.svg" width="96" alt="X">
 </p>
 
-<p align="center"><b>Your turn!</b> Click an empty tile.<br><sub>🏆 Visitors 0 · 🤖 Bot 0 · 🤝 Draws 0 &nbsp;|&nbsp; recent: no finished games yet - be the first!</sub></p>
+<p align="center">The last game was a draw. 🤝 <a href="https://github.com/dogra11/dogra11/issues/new?title=ttt%7Cnew&body=Just%20click%20**Create**%20below%20-%20the%20bot%20will%20play%20its%20move%20in%20a%20few%20seconds%20and%20update%20the%20board.%20%F0%9F%8E%AE"><b>Start a new game</b></a> or just click a tile.<br><sub>🏆 Visitors 0 · 🤖 Bot 0 · 🤝 Draws 1 &nbsp;|&nbsp; recent: 🤝 @dogra11 drew</sub></p>
 <!-- TTT:END -->
 
 <p align="center"><sub>Click an empty tile, then press <b>Create</b> on the page that opens. The bot answers in a few seconds - refresh this page to see its move.</sub></p>

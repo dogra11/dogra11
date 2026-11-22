@@ -2,7 +2,7 @@
   "board": [
     "O",
     "X",
-    "",
+    "X",
     "X",
     "X",
     "O",
@@ -10,7 +10,7 @@
     "O",
     "X"
   ],
-  "status": "playing",
+  "status": "draw",
   "moves": [
     {
       "by": "dogra11",
@@ -43,6 +43,10 @@
     {
       "by": "bot",
       "cell": 7
+    },
+    {
+      "by": "dogra11",
+      "cell": 2
     }
   ],
   "players": [
@@ -51,7 +55,15 @@
   "stats": {
     "visitors": 0,
     "bot": 0,
-    "draws": 0
+    "draws": 1
   },
-  "history": []
+  "history": [
+    {
+      "result": "draw",
+      "players": [
+        "dogra11"
+      ],
+      "date": "2026-11-22"
+    }
+  ]
 }

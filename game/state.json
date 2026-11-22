@@ -1,13 +1,13 @@
 {
   "board": [
     "O",
-    "",
+    "X",
     "",
     "X",
     "X",
     "O",
     "O",
-    "",
+    "O",
     "X"
   ],
   "status": "playing",
@@ -35,6 +35,14 @@
     {
       "by": "bot",
       "cell": 5
+    },
+    {
+      "by": "dogra11",
+      "cell": 1
+    },
+    {
+      "by": "bot",
+      "cell": 7
     }
   ],
   "players": [

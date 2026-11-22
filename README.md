@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/hero.svg" width="100%" alt="RanveerRajeevDogra.java - Ranveer Rajeev Dogra, Software Developer" />
+  <img src="assets/hero.svg" width="100%" alt="RanveerDogra.java - Ranveer Dogra, Software Developer" />
 </p>
 
 <p align="center">
@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/stack.svg" width="100%" alt="mysql> SELECT category, skills FROM tech_stack; Languages: Java, SQL, JavaScript, C++. Backend: Core Java, OOP, JDBC, Node.js, Express, REST APIs. Databases: MySQL, TiDB Cloud. Frontend: React, HTML, CSS. AI: Gemini API, Whisper, RAG, Text-to-speech. Tools: Git, GitHub, Docker, Linux, Eclipse, VS Code, Render." />
+  <img src="assets/stack.svg" width="100%" alt="mysql> SELECT category, skills FROM tech_stack; Languages: Java, SQL, JavaScript. DSA: Arrays, Stack, Queue, Linked List, Trees, Searching and Sorting in Java. Backend: Core Java, OOP, JDBC, Node.js, Express, REST APIs. Databases: MySQL, TiDB Cloud. Frontend: React, HTML, CSS. AI: Gemini API, Whisper, RAG, Text-to-speech. Tools: Git, GitHub, Docker, Linux, Eclipse, VS Code, Render." />
 </p>
 
 <p align="center">

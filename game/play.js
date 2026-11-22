@@ -12,7 +12,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { play, newState, renderBoard, updateReadme } from './ttt.js';
+import { play, newState, renderBoard, renderTextBoard, updateReadme } from './ttt.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
@@ -43,5 +43,5 @@ if (/^ttt\|new$/.test(title)) {
 const board = renderBoard(state, repo);
 writeFileSync(statePath, `${JSON.stringify(state, null, 2)}\n`);
 writeFileSync(readmePath, updateReadme(readFileSync(readmePath, 'utf8'), board));
-writeFileSync(join(here, 'comment.md'), `@${user} ${message}\n\n${board.split('\n').slice(2, 7).join('\n')}\n\n[**Back to the profile**](https://github.com/${repo.split('/')[0]}) to keep playing.\n`);
+writeFileSync(join(here, 'comment.md'), `@${user} ${message}\n\n${renderTextBoard(state)}\n\n[**Back to the profile**](https://github.com/${repo.split('/')[0]}) to keep playing.\n`);
 console.log(message);

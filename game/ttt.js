@@ -111,39 +111,45 @@ export function play(prev, cell, user, opts = {}) {
 
 // ---------------- README rendering ----------------
 const MARK = { X: '❌', O: '⭕' };
+const TILE = { X: 'x', O: 'o' };
 
+const issueUrl = (repo, title) => `https://github.com/${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent('Just click **Create** below - the bot will play its move in a few seconds and update the board. 🎮')}`;
+
+/** Board for the README: drawn tiles (assets/ttt/*.svg); empty tiles are links that play that square. */
 export function renderBoard(state, repo) {
-  const issueUrl = (title) => `https://github.com/${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent('Just click **Create** below - the bot will play its move in a few seconds and update the board. 🎮')}`;
   const playing = state.status === 'playing';
-  const cell = (i) => {
+  const tile = (i) => {
     const v = state.board[i];
-    if (v) return MARK[v];
-    return playing ? `[⬜](${issueUrl(`ttt|move|${i}`)})` : '⬜';
+    if (v) return `<img src="assets/ttt/${TILE[v]}.svg" width="96" alt="${v}">`;
+    if (!playing) return '<img src="assets/ttt/blank.svg" width="96" alt="empty">';
+    return `<a href="${issueUrl(repo, `ttt|move|${i}`)}"><img src="assets/ttt/empty.svg" width="96" alt="play square ${i + 1}"></a>`;
   };
-  const rows = [0, 3, 6].map((r) => `| ${cell(r)} | ${cell(r + 1)} | ${cell(r + 2)} |`).join('\n');
+  const grid = [0, 3, 6].map((r) => `${tile(r)}${tile(r + 1)}${tile(r + 2)}`).join('<br>\n');
 
   let status;
-  if (state.status === 'playing') status = state.moves.length ? '**Your turn!** Click an empty square. You are ❌, the bot is ⭕.' : '**Start a game:** click any square. You are ❌, the bot is ⭕.';
+  if (playing) status = state.moves.length ? '<b>Your turn!</b> Click an empty tile.' : '<b>Start a game:</b> click any tile.';
   else {
     const who = state.status === 'visitors' ? 'Visitors won the last game! 🎉' : state.status === 'bot' ? 'The bot won the last game. 🤖' : 'The last game was a draw. 🤝';
-    status = `${who} [**Start a new game**](${issueUrl('ttt|new')}) or just click a square.`;
+    status = `${who} <a href="${issueUrl(repo, 'ttt|new')}"><b>Start a new game</b></a> or just click a tile.`;
   }
   const s = state.stats;
   const recent = state.history.length
-    ? state.history.map((h) => `${h.result === 'visitors' ? '🏆' : h.result === 'bot' ? '🤖' : '🤝'} ${h.players.map((p) => `@${p}`).join(', ')} - ${h.result === 'visitors' ? 'won' : h.result === 'bot' ? 'lost' : 'draw'} (${h.date})`).join('<br>')
-    : 'No finished games yet - be the first!';
+    ? state.history.slice(0, 3).map((h) => `${h.result === 'visitors' ? '🏆' : h.result === 'bot' ? '🤖' : '🤝'} ${h.players.map((p) => `@${p}`).join(', ')} ${h.result === 'visitors' ? 'won' : h.result === 'bot' ? 'lost' : 'drew'}`).join(' · ')
+    : 'no finished games yet - be the first!';
 
   return [
-    status,
+    '<p align="center">',
+    grid,
+    '</p>',
     '',
-    '|   |   |   |',
-    '|:-:|:-:|:-:|',
-    rows,
-    '',
-    `**Scoreboard:** 🏆 Visitors ${s.visitors} · 🤖 Bot ${s.bot} · 🤝 Draws ${s.draws}`,
-    '',
-    `<sub>Recent games:<br>${recent}</sub>`,
+    `<p align="center">${status}<br><sub>🏆 Visitors ${s.visitors} · 🤖 Bot ${s.bot} · 🤝 Draws ${s.draws} &nbsp;|&nbsp; recent: ${recent}</sub></p>`,
   ].join('\n');
+}
+
+/** Small emoji board for the reply comment on the issue. */
+export function renderTextBoard(state) {
+  const c = (i) => MARK[state.board[i]] || '⬜';
+  return [0, 3, 6].map((r) => `${c(r)}${c(r + 1)}${c(r + 2)}`).join('<br>');
 }
 
 export function updateReadme(readme, boardMarkdown) {

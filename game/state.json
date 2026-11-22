@@ -1,6 +1,6 @@
 {
   "board": [
-    "",
+    "O",
     "",
     "",
     "",
@@ -8,7 +8,7 @@
     "",
     "O",
     "",
-    ""
+    "X"
   ],
   "status": "playing",
   "moves": [
@@ -19,6 +19,14 @@
     {
       "by": "bot",
       "cell": 6
+    },
+    {
+      "by": "dogra11",
+      "cell": 8
+    },
+    {
+      "by": "bot",
+      "cell": 0
     }
   ],
   "players": [

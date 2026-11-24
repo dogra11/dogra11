@@ -7,10 +7,10 @@
     "O",
     "",
     "X",
-    "",
+    "X",
     "X"
   ],
-  "status": "playing",
+  "status": "visitors",
   "moves": [
     {
       "by": "Kanishk-create",
@@ -35,17 +35,28 @@
     {
       "by": "bot",
       "cell": 4
+    },
+    {
+      "by": "Kanishk-create",
+      "cell": 7
     }
   ],
   "players": [
     "Kanishk-create"
   ],
   "stats": {
-    "visitors": 0,
+    "visitors": 1,
     "bot": 0,
     "draws": 1
   },
   "history": [
+    {
+      "result": "visitors",
+      "players": [
+        "Kanishk-create"
+      ],
+      "date": "2026-11-24"
+    },
     {
       "result": "draw",
       "players": [

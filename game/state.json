@@ -4,11 +4,11 @@
     "O",
     "",
     "O",
-    "",
+    "O",
     "",
     "X",
     "",
-    ""
+    "X"
   ],
   "status": "playing",
   "moves": [
@@ -27,6 +27,14 @@
     {
       "by": "bot",
       "cell": 3
+    },
+    {
+      "by": "Kanishk-create",
+      "cell": 8
+    },
+    {
+      "by": "bot",
+      "cell": 4
     }
   ],
   "players": [

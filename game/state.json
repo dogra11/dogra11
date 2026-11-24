@@ -1,9 +1,9 @@
 {
   "board": [
-    "",
+    "X",
     "O",
     "",
-    "",
+    "O",
     "",
     "",
     "X",
@@ -19,6 +19,14 @@
     {
       "by": "bot",
       "cell": 1
+    },
+    {
+      "by": "Kanishk-create",
+      "cell": 0
+    },
+    {
+      "by": "bot",
+      "cell": 3
     }
   ],
   "players": [

@@ -1,18 +1,29 @@
 {
   "board": [
     "",
+    "O",
     "",
     "",
     "",
     "",
-    "",
-    "",
+    "X",
     "",
     ""
   ],
   "status": "playing",
-  "moves": [],
-  "players": [],
+  "moves": [
+    {
+      "by": "Kanishk-create",
+      "cell": 6
+    },
+    {
+      "by": "bot",
+      "cell": 1
+    }
+  ],
+  "players": [
+    "Kanishk-create"
+  ],
   "stats": {
     "visitors": 0,
     "bot": 0,

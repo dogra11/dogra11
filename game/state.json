@@ -1,57 +1,18 @@
 {
   "board": [
-    "O",
-    "X",
-    "X",
-    "X",
-    "X",
-    "O",
-    "O",
-    "O",
-    "X"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
   ],
-  "status": "draw",
-  "moves": [
-    {
-      "by": "dogra11",
-      "cell": 4
-    },
-    {
-      "by": "bot",
-      "cell": 6
-    },
-    {
-      "by": "dogra11",
-      "cell": 8
-    },
-    {
-      "by": "bot",
-      "cell": 0
-    },
-    {
-      "by": "dogra11",
-      "cell": 3
-    },
-    {
-      "by": "bot",
-      "cell": 5
-    },
-    {
-      "by": "dogra11",
-      "cell": 1
-    },
-    {
-      "by": "bot",
-      "cell": 7
-    },
-    {
-      "by": "dogra11",
-      "cell": 2
-    }
-  ],
-  "players": [
-    "dogra11"
-  ],
+  "status": "playing",
+  "moves": [],
+  "players": [],
   "stats": {
     "visitors": 0,
     "bot": 0,
